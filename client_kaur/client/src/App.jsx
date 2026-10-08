@@ -20,7 +20,7 @@ function App() {
   }
  
   function getStudents() {
-    axios.get("http://localhost:5001/students")
+    axios.get("/api/students")
     .then((response) => {
       setStudents(response.data);
     });
@@ -66,13 +66,13 @@ function App() {
     }
     setError("");
     if (edit == null) {
-      axios.post("http://localhost:5001/students", { name, course, age })
+      axios.post("/api/students", { name, course, age })
         .then(() => {
           clearTxt();
           getStudents();
         });
     } else {
-      axios.put("http://localhost:5001/students/" + edit, { name, course, age })
+      axios.put("/api/students/" + edit, { name, course, age })
         .then(() => {
           clearTxt();
           getStudents();
@@ -88,7 +88,7 @@ function App() {
   }
  
   function deleteStudent(id) {
-    axios.delete("http://localhost:5001/students/" + id)
+    axios.delete("/api/students/" + id)
       .then(() => {
         getStudents();
       });
