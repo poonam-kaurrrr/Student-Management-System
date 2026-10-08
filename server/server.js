@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Student = require("./models/Student");
-const API = import.meta.env.VITE_API_URL;
+
 
 require("dotenv").config();
  
